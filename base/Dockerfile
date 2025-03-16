@@ -9,6 +9,7 @@ RUN apt install python3 -y
 RUN apt install vim -y
 RUN apt install curl -y
 RUN apt install openssh-server -y
+RUN apt install build-essential -y
 
 RUN echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
