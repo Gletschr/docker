@@ -1,10 +1,11 @@
 FROM debian:bookworm-slim
 
-RUN apt update 
+RUN apt update
 RUN apt upgrade -y
 
 RUN --mount=type=secret,id=password export PASSWORD="$(cat /run/secrets/password)" && echo "root:$PASSWORD" | chpasswd && unset PASSWORD
 
+RUN apt install git -y
 RUN apt install python3 -y
 RUN apt install vim -y
 RUN apt install curl -y
